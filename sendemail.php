@@ -34,7 +34,7 @@ if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
 
     //Recipients
     $mail->setFrom($email, $name);
-    $mail->addAddress('milosjovaniczaki@gmail.com');     // Add a recipient
+    $mail->addAddress('dajananimcevic6@gmail.com');     // Add a recipient
 
     // Content
     $mail->Subject = $subject;

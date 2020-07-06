@@ -190,7 +190,7 @@ require("includes/db_config.php");
         $userId = $_SESSION['id'];
         $productId = mysqli_real_escape_string ($connect,$_POST['id']);
         $quantity = mysqli_real_escape_string($connect,$_POST['quantity']);
-        $sql = "UPDATE cart SET quantity = quantity + '$quantity' WHERE  id_user = '$userId' AND id_product = '$productId'";
+        $sql = "UPDATE cart SET quantity = quantity + '$quantity' WHERE  id_user = '$userId' AND id_product = '$productId' AND date_order IS NULL";
         $query = mysqli_query ($connect,$sql);
         if(mysqli_affected_rows($connect) == 0){
             $sql = "INSERT INTO cart(id_user,id_product,quantity) VALUES('$userId','$productId','$quantity')";

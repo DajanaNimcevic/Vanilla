@@ -14,7 +14,6 @@ $query = mysqli_query ($connect,$sql);
     <?php
     $total_price = 0;
     $current_date_order = NULL;
-    $porudzbina = 1;
     while($result = mysqli_fetch_assoc($query)){
 //        var_dump($result);
         $new_date_order = $result['date_order'];
@@ -34,7 +33,7 @@ $query = mysqli_query ($connect,$sql);
                 <strong>Količina: </strong>{$result['quantity']}<br>
                 <strong>Cena: </strong>{$result['price']}<br>
                 <input type=\"hidden\" name=\"id\" value=\"{$result['id_product']}\">
-                <button class=\"btn btn-primary mt-3\"  name=\"delete\">DELETE</button>
+                <!-- <button class=\"btn btn-primary mt-3\"  name=\"delete\">DELETE</button>-->
             </form>
         </div>
      </div>
@@ -43,12 +42,12 @@ $query = mysqli_query ($connect,$sql);
         }
         else{
             if($total_price!=0){
-                echo "<strong>Ukupna cena porudžbine је: $total_price dinara</strong><br>";
+                echo "<span style='border-bottom: 5px solid darkorange;'><strong>Ukupna cena porudžbine је: $total_price dinara</strong></span><br>";
             }
             $total_price=0;
             $current_date_order = $new_date_order;
             $username = $result['username'];
-            echo "Porudžbina za korisnika $username poručena na dan: $current_date_order";
+            echo "Porudžbina za korisnika <strong>$username</strong> poručena na dan: $current_date_order";
             echo "<hr>";
 
             $name = $result['picture'];
@@ -66,7 +65,7 @@ $query = mysqli_query ($connect,$sql);
                     <strong>Količina: </strong>{$result['quantity']}<br>
                     <strong>Cena: </strong>{$result['price']}<br>
                     <input type=\"hidden\" name=\"id\" value=\"{$result['id_product']}\">
-                    <button class=\"btn btn-primary mt-3\"  name=\"delete\">DELETE</button>
+                   <!-- <button class=\"btn btn-primary mt-3\"  name=\"delete\">DELETE</button>-->
                 </form>
             </div>
          </div>
@@ -75,7 +74,7 @@ $query = mysqli_query ($connect,$sql);
         }
 
      }
-    echo "<strong>Ukupna cena porudžbine је: $total_price dinara</strong><br>";
+    echo "<span style='border-bottom: 5px solid darkorange;'><strong>Ukupna cena porudžbine је: $total_price dinara</strong></span><br>";
 
     ?>
 </div>

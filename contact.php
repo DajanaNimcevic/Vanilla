@@ -152,7 +152,7 @@
                   <span class="d-block text-black">Adresa</span>
                   <span>Prvomajska 1, 24000 Subotica</span></li>
                 <li class="d-block mb-3"><span class="d-block text-black">Telefon:</span><span>024 555 555</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>vanilla@wellness.com</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>wellnessvanilla@gmail.com</span></li>
               </ul>
             </div>
           </div>

@@ -197,14 +197,20 @@ require("includes/db_config.php");
     if(isset($_POST['delete'])) {
         $user = $_SESSION['id'];
         $id = mysqli_real_escape_string($connect, $_POST['id']);
-        $sql = "DELETE FROM cart WHERE id_product = '$id' AND id_user ='$user'";
+        $sql = "DELETE FROM cart WHERE id_product = '$id' AND id_user ='$user'`AND date_order IS NULL`";
         $query = mysqli_query($connect, $sql);
     }
     if(isset($_POST['kupi'])){
         $user = $_SESSION['id'];
         //$sql = "SELECT * FROM cart where id_user ='$user' and date_order is NULL";
+        echo '<script language="javascript">';
+        echo 'alert("Uspesno poslata porudzbina!")';
+        echo '</script>';
         $sql = "UPDATE cart SET date_order = CURRENT_TIMESTAMP WHERE id_user = '$user' AND date_order IS NULL";
         $result= mysqli_query($connect,$sql);
+
+
+
         /*while ( $row = mysqli_fetch_assoc( $result ) ) {
            $sql2 = "INSERT INTO cartorder(id_user, id_product, quantity) VALUES('$row[id_user]','$row[id_product]','$row[quantity]')";
            $query = mysqli_query($connect,$sql2);

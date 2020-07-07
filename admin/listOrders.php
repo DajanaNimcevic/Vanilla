@@ -9,7 +9,7 @@ if (isset($_SESSION['isAdmin'])) {
 
 $sql = "SELECT * FROM cart c JOIN user u ON c.id_user = u.id_user JOIN product p ON c.id_product = p.id_product WHERE date_order IS NOT NULL ORDER BY date_order DESC";
 $query = mysqli_query ($connect,$sql);
-?>
+?>/';
 <div class="container mt-5">
     <?php
     $total_price = 0;

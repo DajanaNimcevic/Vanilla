@@ -197,7 +197,7 @@ require("includes/db_config.php");
     if(isset($_POST['delete'])) {
         $user = $_SESSION['id'];
         $id = mysqli_real_escape_string($connect, $_POST['id']);
-        $sql = "DELETE FROM cart WHERE id_product = '$id' AND id_user ='$user'`AND date_order IS NULL`";
+        $sql = "DELETE FROM cart WHERE id_product = '$id' AND id_user ='$user' AND date_order IS NULL";
         $query = mysqli_query($connect, $sql);
     }
     if(isset($_POST['kupi'])){
